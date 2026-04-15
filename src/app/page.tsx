@@ -1,10 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Locale = "ko" | "en";
 type ResumeIconKind = "education" | "military" | "certificate";
+type BlogPost = {
+  title: string;
+  date: string;
+  category: string;
+  href: string;
+  image: string;
+};
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/kimjusnu" },
@@ -31,7 +38,7 @@ const skillGroups = [
   },
 ] as const;
 
-const blogPosts = [
+const fallbackBlogPosts: BlogPost[] = [
   {
     title: "딥러닝 뜯어보기 (1) : ChatGPT는 어떻게 답변을 생성할까?",
     date: "2026.04.15",
@@ -386,7 +393,34 @@ const content = {
 
 export default function Home() {
   const [locale, setLocale] = useState<Locale>("ko");
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>(fallbackBlogPosts);
   const t = useMemo(() => content[locale], [locale]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch("/api/blog-posts", { cache: "no-store" });
+        if (!response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as { posts?: BlogPost[] };
+        if (!ignore && data.posts && data.posts.length > 0) {
+          setBlogPosts(data.posts);
+        }
+      } catch {
+        // Keep the fallback list when live fetching fails.
+      }
+    };
+
+    void fetchPosts();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   return (
     <main className="relative overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
@@ -658,6 +692,7 @@ export default function Home() {
                 className="grid gap-4 py-5 transition hover:bg-white/30 lg:grid-cols-[112px_1fr_110px]"
               >
                 <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={post.image} alt={post.title} className="h-24 w-full object-cover" loading="lazy" />
                 </div>
                 <div className="space-y-2">
