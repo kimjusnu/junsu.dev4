@@ -13,9 +13,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Junsu Kim | Frontend Developer",
+  title: "김준수 | Frontend Developer",
   description:
-    "Portfolio of Junsu Kim, a frontend developer building polished interfaces with Next.js, React, and TypeScript.",
+    "김준수의 포트폴리오입니다. Next.js, React, TypeScript 기반으로 제품 중심의 프론트엔드 경험을 구현합니다.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ko"
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
