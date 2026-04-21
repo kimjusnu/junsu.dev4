@@ -75,7 +75,7 @@ function parsePosts(html: string): BlogPost[] {
     }
   }
 
-  return posts;
+  return posts.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 }
 
 export const revalidate = 3600;
