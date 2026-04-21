@@ -108,9 +108,9 @@ export const en: LocaleContent = {
         label: "Etc",
         entries: [
           {
-            title: "TUK Field Training Supporters — Vice Leader, 5th cohort",
-            note: "Hosted consultation sessions · partner company interviews · YouTube content",
-            period: "2024.02 — 2025.02",
+            title: "TUK Field Training Supporters — 1st · 2nd · 3rd cohort",
+            note: "Member (1st), Vice Leader (2nd · 3rd) · consultation sessions · partner interviews · promotional content",
+            period: "2022.12 — 2025.02",
           },
           {
             title: "TUK GDSC Beginner",
@@ -118,24 +118,9 @@ export const en: LocaleContent = {
             period: "2024.05 — 2024.08",
           },
           {
-            title: "TUK Field Training Supporters — Member, 4th cohort",
-            note: "Hosted consultation sessions · ran expo booth",
-            period: "2023.07 — 2024.01",
-          },
-          {
-            title: "TUK Field Training Supporters — Member, 3rd cohort",
-            note: "Card news / poster production · SNS operation · event support",
-            period: "2022.12 — 2023.06",
-          },
-          {
-            title: "SPLing Presentation Club — Staff, 42nd cohort",
-            note: "Planning team lead · ran presentation projects and club operations",
-            period: "2020.10 — 2021.04",
-          },
-          {
-            title: "SPLing Presentation Club — Member, 40th cohort",
-            note: "Won 2 presentation awards",
-            period: "2020.03 — 2020.09",
+            title: "SPLing Presentation Club — 40th · 42nd cohort",
+            note: "Member (40th, 2 presentation awards), Staff (42nd, Planning team lead)",
+            period: "2020.03 — 2021.04",
           },
         ],
       },
