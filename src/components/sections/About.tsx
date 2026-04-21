@@ -37,11 +37,11 @@ export function About({ about }: Props) {
           ))}
         </div>
 
-        <dl className="grid gap-3">
+        <dl className="grid divide-y divide-hairline border-y border-hairline lg:gap-3 lg:divide-y-0 lg:border-y-0">
           {about.facts.map((fact) => (
             <div
               key={fact.label}
-              className="grid grid-cols-[110px_1fr] items-baseline gap-4 text-[13.5px]"
+              className="grid grid-cols-[100px_1fr] items-baseline gap-4 py-2.5 text-[13px] lg:grid-cols-[110px_1fr] lg:py-0 lg:text-[13.5px]"
             >
               <dt className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
                 {fact.label}
