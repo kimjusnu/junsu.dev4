@@ -52,17 +52,51 @@ export function Experience({ experience }: Props) {
               <p className="max-w-[64ch] text-[15px] leading-[1.85] text-ink-soft">
                 {item.description}
               </p>
-              <ul className="grid gap-2.5">
-                {item.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex gap-3 text-[14px] leading-[1.75] text-ink-soft"
-                  >
-                    <span aria-hidden className="mt-[0.75em] h-px w-3 shrink-0 bg-muted" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
+              {item.projects && item.projects.length > 0 ? (
+                <div className="flex flex-col gap-5">
+                  {item.projects.map((project) => (
+                    <div
+                      key={project.name}
+                      className="border-l border-hairline-strong pl-4 md:pl-5"
+                    >
+                      <p className="text-[14.5px] font-semibold text-ink md:text-[15px]">
+                        {project.name}
+                      </p>
+                      <p className="mt-0.5 text-[12.5px] leading-[1.6] text-muted">
+                        {project.summary}
+                      </p>
+                      {project.highlights.length > 0 ? (
+                        <ul className="mt-2.5 grid gap-1.5">
+                          {project.highlights.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex gap-3 text-[13.5px] leading-[1.7] text-ink-soft"
+                            >
+                              <span
+                                aria-hidden
+                                className="mt-[0.7em] h-px w-2.5 shrink-0 bg-muted-soft"
+                              />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              ) : item.highlights && item.highlights.length > 0 ? (
+                <ul className="grid gap-2.5">
+                  {item.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex gap-3 text-[14px] leading-[1.75] text-ink-soft"
+                    >
+                      <span aria-hidden className="mt-[0.75em] h-px w-3 shrink-0 bg-muted" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </li>
         ))}

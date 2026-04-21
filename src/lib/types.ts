@@ -17,6 +17,12 @@ export type ProjectItem = {
   icon?: string;
 };
 
+export type ExperienceProject = {
+  name: string;
+  summary: string;
+  highlights: readonly string[];
+};
+
 export type ExperienceItem = {
   company: string;
   logo: string;
@@ -25,7 +31,8 @@ export type ExperienceItem = {
   employment: string;
   role: string;
   description: string;
-  highlights: readonly string[];
+  highlights?: readonly string[];
+  projects?: readonly ExperienceProject[];
 };
 
 

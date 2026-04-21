@@ -139,12 +139,32 @@ export const en: LocaleContent = {
         employment: "",
         role: "Assistant Manager",
         description: "Frontend · backend and AI feature development for web services",
-        highlights: [
-          "Led MyFeed 1.0 maintenance and new 1.5 development.",
-          "Migrated the company site from PHP to Next.js and restructured information architecture for SEO.",
-          "Designed and implemented UI/UX for three AI admin tools.",
-          "Built GA-based monitoring and analytics flows for product data.",
-          "Introduced GitHub Actions and Sentry to improve operations.",
+        projects: [
+          {
+            name: "My Feed",
+            summary:
+              "Livestock data analytics SaaS · GA4 + Gemini AI integration · React 19 / FastAPI",
+            highlights: [
+              "Orchestrated 14 parallel API calls (Promise.all) with composite Recharts dashboards",
+              "Auto-generated AI insight reports via Gemini API with multi-model fallback (flash-latest → pro-latest) and markdown rendering",
+              "Built 3-level recursive tree multi-select filter (company → dealer → farm) from scratch with pure React hooks",
+              "SSE-based streaming CSV export · batch-sync streaming · participated in WebSocket endpoint design",
+              "JWT + RBAC role-aware UI branching (admin / dealer / farm) + partial-month edge-case period comparison utility",
+            ],
+          },
+          {
+            name: "Homepage Renewal",
+            summary:
+              "End-to-end B2B SaaS marketing site renewal · Next.js 16 App Router + React 19 RSC",
+            highlights: [
+              "Designed Next.js 16 App Router + RSC architecture — minimized 'use client' for smaller bundles, streaming SSR, dynamic Metadata API (sitemap · robots · OG)",
+              "Built custom KR/EN i18n from scratch without next-intl — type-safe message generics (Record<Locale, Shape>), localStorage + CustomEvent global sync",
+              "Migrated search index with 301 redirects for 5 legacy URLs + sitemap/robots infrastructure (crawl → index → rank pipeline)",
+              "Route Handler-based external content pipeline — Naver Blog RSS, OG thumbnail parser, CORS image proxy, press-outlet domain mapping",
+              "Integrated legacy Metronic dashboards via iframe + URLSearchParams · TreeWalker for two-way runtime i18n sync between parent and iframe",
+              "Sentry 3-runtime instrumentation (server/client/edge) + Clarity custom CTA events + /proof-viewer parameter whitelist validation for dual observability and security",
+            ],
+          },
         ],
       },
       {
@@ -154,11 +174,21 @@ export const en: LocaleContent = {
         department: "TA Technical Research",
         employment: "Intern",
         role: "",
-        description: "Frontend development for StartupQT platform and back-office",
-        highlights: [
-          "Designed and implemented new Next.js features, dynamic forms, and editor flows.",
-          "Built back-office screens and refined state management structure.",
-          "Resolved SSR hydration issues and improved deployment automation.",
+        description: "StartupQT quiz SaaS · participated across planning, frontend, and DevOps",
+        projects: [
+          {
+            name: "StartupQT",
+            summary:
+              "Quiz authoring · review · management SaaS for startup education · Next.js · built end to end from spec to CI/CD · SSL",
+            highlights: [
+              "Participated from spec design — scoped 37 sub-features for authoring/review/management, estimated effort + priority matrix, split 9 user/admin flows across pages",
+              "Designed and built the quiz authoring editor with a 12-step input flow (type · topic · options · answer · difficulty · hints · explanation · wrong-answer notes)",
+              "Built the review workflow — checklist modal (4 categories · caution UX · full-check gating) + categorized rejection reasons + concurrent-review conflict handling",
+              "Solely built the deploy pipeline — Self-hosted Runner (EC2 Ubuntu) + GitHub Actions + PM2 + multi-stage Dockerfile",
+              "Nginx reverse proxy (including /_next/ static paths) + Let's Encrypt Certbot HTTPS with automated renewal",
+              "Quality gates via Husky + lint-staged pre-commit and pre-push (build · yarn audit) + Jest · RTL TDD (Red → Green → Refactor)",
+            ],
+          },
         ],
       },
     ],

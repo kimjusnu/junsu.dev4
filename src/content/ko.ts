@@ -139,12 +139,32 @@ export const ko: LocaleContent = {
         employment: "",
         role: "대리",
         description: "웹 서비스 프론트엔드 · 백엔드 및 AI 기능 개발",
-        highlights: [
-          "마이피드 1.0 유지보수와 1.5 버전 신규 개발을 주도했습니다.",
-          "회사 홈페이지를 PHP에서 Next.js로 마이그레이션하고 SEO 구조를 재설계했습니다.",
-          "AI 기반 관리기 3종의 UI/UX를 설계하고 구현했습니다.",
-          "GA 기반 모니터링 체계를 구축해 서비스 데이터 분석 플로우를 정비했습니다.",
-          "GitHub Actions · Sentry를 도입해 운영 환경을 개선했습니다.",
+        projects: [
+          {
+            name: "마이피드 (My Feed)",
+            summary:
+              "축산업 특화 데이터 분석 SaaS · GA4 + Gemini AI 통합 · React 19 / FastAPI",
+            highlights: [
+              "14개 API 병렬 오케스트레이션(Promise.all) + Recharts 복합 차트로 SaaS 대시보드 구성",
+              "Gemini API 멀티모델 폴백(gemini-flash-latest → gemini-pro-latest)으로 AI 인사이트 리포트 자동 생성 · 마크다운 렌더링",
+              "회사 → 대리점 → 농장 3단계 재귀 트리 멀티셀렉트 필터 자체 구현 (Redux/Zustand 없이 순수 hooks)",
+              "SSE 기반 대용량 CSV 스트리밍 내보내기 · 배치 동기화 스트리밍 · WebSocket 엔드포인트 설계 참여",
+              "JWT + RBAC 다중 권한 레벨(admin / 대리점 / 농장) UI 분기 + 부분 월 엣지케이스 대응 기간 비교 유틸 설계",
+            ],
+          },
+          {
+            name: "홈페이지 리뉴얼",
+            summary:
+              "B2B SaaS 마케팅 사이트 풀스펙 리뉴얼 · Next.js 16 App Router + React 19 RSC",
+            highlights: [
+              "Next.js 16 App Router + RSC 아키텍처 설계 — Server Components 기본 + 'use client' 최소화로 번들 감소, Streaming SSR, 동적 Metadata API(sitemap · robots · OG)",
+              "next-intl 없이 KR/EN 커스텀 i18n 자체 구현 — 타입 안전 메시지 제네릭(Record<Locale, Shape>), localStorage + CustomEvent 전역 동기화",
+              "레거시 URL 5종 301 리다이렉트 + sitemap · robots 인프라로 검색 인덱스 교체 (크롤 → 인덱스 → 랭크 파이프라인 대응)",
+              "Route Handler 기반 외부 콘텐츠 파이프라인 — 네이버블로그 RSS · OG 썸네일 파서 · 이미지 CORS 프록시 · 언론사 도메인 매핑",
+              "레거시 Metronic 대시보드 iframe 통합 + URLSearchParams · TreeWalker로 부모-iframe 런타임 i18n 양방향 동기화",
+              "Sentry 서버/클라/엣지 3-runtime + Microsoft Clarity CTA 이벤트 + /proof-viewer 파라미터 화이트리스트 검증으로 옵저버빌리티·보안 이중화",
+            ],
+          },
         ],
       },
       {
@@ -154,11 +174,21 @@ export const ko: LocaleContent = {
         department: "TA 기술연구부서",
         employment: "인턴",
         role: "",
-        description: "StartupQT 플랫폼 및 백오피스 프론트엔드 개발",
-        highlights: [
-          "Next.js 기반 신규 기능을 설계하고 동적 입력 폼·에디터 흐름을 개발했습니다.",
-          "백오피스 화면을 구축하고 상태 관리 구조를 정비했습니다.",
-          "SSR hydration 이슈를 해결하고 배포 자동화를 개선했습니다.",
+        description: "StartupQT 퀴즈 SaaS · 기획 · 프론트엔드 · DevOps 전반 참여",
+        projects: [
+          {
+            name: "StartupQT",
+            summary:
+              "창업 교육용 퀴즈 저작·검수·관리 SaaS · Next.js · 기획부터 CI/CD · SSL까지 단독 구축",
+            highlights: [
+              "문제 저작·검수·관리 37개 세부 기능 명세 + 공수·우선순위 산정 + 사용자·관리자 9페이지 플로우 분할까지 기획 단계부터 참여",
+              "문제 유형·주제·보기·정답·난이도·풀이 전략·해설·오답 해설 12단계 입력 흐름의 퀴즈 저작 에디터 프론트엔드 설계·구현",
+              "검수 체크리스트 모달(4개 카테고리·경고 문구·전체 확인 UX) + 반려 사유 카테고리화 + 동시 검수 충돌 대응 워크플로 구현",
+              "Self-hosted Runner(EC2 Ubuntu) + GitHub Actions + PM2 + Docker 멀티스테이지 Dockerfile로 배포 파이프라인 단독 구축",
+              "Nginx 리버스 프록시(/_next/ 정적 경로 포함) + Let's Encrypt Certbot HTTPS 적용 · 자동 갱신 운영",
+              "Husky + lint-staged pre-commit + pre-push(build · yarn audit) 품질 게이트 + Jest · RTL 기반 TDD(Red → Green → Refactor) 적용",
+            ],
+          },
         ],
       },
     ],
