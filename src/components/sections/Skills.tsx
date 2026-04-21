@@ -8,7 +8,7 @@ type Props = {
 
 export function Skills({ skills }: Props) {
   return (
-    <section className="pb-20">
+    <section className="pb-16 md:pb-20">
       <SectionHeader id="skills" label={skills.label} divider={false} />
 
       <ul className="mt-10 border-t border-hairline">

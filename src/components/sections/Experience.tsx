@@ -8,7 +8,7 @@ type Props = {
 
 export function Experience({ experience }: Props) {
   return (
-    <section className="pb-20">
+    <section className="pb-16 md:pb-20">
       <SectionHeader
         id="work"
         label={experience.label}
@@ -20,7 +20,7 @@ export function Experience({ experience }: Props) {
         {experience.items.map((item, index) => (
           <li
             key={item.company}
-            className="grid gap-6 border-b border-hairline py-10 md:grid-cols-[minmax(0,200px)_1fr] md:gap-10 md:py-12"
+            className="grid gap-5 border-b border-hairline py-8 md:grid-cols-[minmax(0,200px)_1fr] md:gap-10 md:py-12"
           >
             <div className="flex flex-col gap-5">
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
@@ -45,7 +45,7 @@ export function Experience({ experience }: Props) {
 
             <div className="flex flex-col gap-5">
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <h3 className="text-[1.55rem] font-semibold tracking-[-0.02em] text-ink md:text-[1.85rem]">
+                <h3 className="text-[1.35rem] font-semibold tracking-[-0.02em] text-ink md:text-[1.85rem]">
                   {item.company}
                 </h3>
                 <span className="text-[13px] text-muted">{item.department}</span>

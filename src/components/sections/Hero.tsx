@@ -14,19 +14,19 @@ const arrowClass =
 
 export function Hero({ hero }: Props) {
   return (
-    <section id="top" className="pb-14 pt-8 md:pb-20 md:pt-12">
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.7fr)] md:gap-14">
-        <div className="flex flex-col gap-8">
-          <div className="flex items-center gap-3 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-accent">
+    <section id="top" className="pb-12 pt-6 md:pb-20 md:pt-12">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.7fr)] md:gap-14">
+        <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex items-center gap-2.5 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-accent md:text-[11px]">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
             {hero.eyebrow}
           </div>
 
-          <div className="space-y-6">
-            <h1 className="display whitespace-pre-line text-[clamp(2.6rem,6.2vw,5.3rem)]">
+          <div className="space-y-5 md:space-y-6">
+            <h1 className="display whitespace-pre-line text-[clamp(2.1rem,6.2vw,5.3rem)]">
               {hero.headline}
             </h1>
-            <p className="max-w-[46ch] whitespace-pre-line text-[15px] leading-[1.75] text-ink-soft md:text-base">
+            <p className="max-w-[46ch] whitespace-pre-line text-[14px] leading-[1.7] text-ink-soft md:text-base md:leading-[1.75]">
               {hero.summary}
             </p>
           </div>
@@ -61,14 +61,14 @@ export function Hero({ hero }: Props) {
         </div>
 
         <div className="flex w-full justify-center md:justify-end">
-          <figure className="flex w-[220px] flex-col gap-2 md:w-[260px]">
+          <figure className="flex w-[180px] flex-col gap-2 sm:w-[220px] md:w-[260px]">
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-hairline bg-highlight">
               <Image
                 src="/KakaoTalk_20260415_144305811.png"
                 alt="Portrait of Junsu Kim"
                 fill
                 priority
-                sizes="(min-width: 768px) 260px, 220px"
+                sizes="(min-width: 768px) 260px, (min-width: 640px) 220px, 180px"
                 className="object-cover object-center grayscale contrast-[0.96] opacity-95"
               />
             </div>

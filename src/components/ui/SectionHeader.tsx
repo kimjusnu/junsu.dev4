@@ -9,7 +9,7 @@ export function SectionHeader({ id, label, meta, divider = true }: Props) {
   return (
     <div
       id={id}
-      className={`flex scroll-mt-24 items-baseline justify-between gap-6 pt-10 md:pt-14 ${
+      className={`flex scroll-mt-24 flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pt-8 md:pt-14 ${
         divider ? "border-t border-hairline" : ""
       }`}
     >

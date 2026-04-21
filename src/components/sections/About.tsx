@@ -27,7 +27,7 @@ function EntryRow({ entry, chevron }: { entry: ResumeEntry; chevron?: boolean })
 
 export function About({ about }: Props) {
   return (
-    <section className="pb-20">
+    <section className="pb-16 md:pb-20">
       <SectionHeader id="about" label={about.label} />
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
@@ -52,7 +52,7 @@ export function About({ about }: Props) {
         </dl>
       </div>
 
-      <div className="mt-14 grid gap-10 md:grid-cols-[minmax(0,200px)_1fr]">
+      <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-[minmax(0,200px)_1fr] md:gap-10">
         <div className="section-label text-muted">Résumé</div>
         <ul className="divide-y divide-hairline border-y border-hairline">
           {about.records.map((record) => {

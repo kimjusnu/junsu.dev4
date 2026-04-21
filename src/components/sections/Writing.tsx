@@ -9,12 +9,12 @@ type Props = {
 
 export function Writing({ writing, posts }: Props) {
   return (
-    <section className="pb-20">
+    <section className="pb-16 md:pb-20">
       <SectionHeader id="writing" label={writing.label} divider={false} />
 
-      <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,200px)_1fr]">
-        <div className="flex max-w-[28ch] flex-col gap-5">
-          <p className="text-[14px] leading-[1.7] text-muted">
+      <div className="mt-10 grid gap-8 md:grid-cols-[minmax(0,200px)_1fr] md:gap-10">
+        <div className="flex max-w-[28ch] flex-col gap-4">
+          <p className="text-[13.5px] leading-[1.7] text-muted md:text-[14px]">
             {writing.description}
           </p>
           <a
@@ -34,18 +34,20 @@ export function Writing({ writing, posts }: Props) {
                 href={post.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group grid gap-4 py-5 md:grid-cols-[50px_1fr_110px_auto] md:items-center md:gap-6"
+                className="group grid gap-2 py-4 md:grid-cols-[50px_1fr_110px_auto] md:items-center md:gap-6 md:gap-y-2 md:py-5"
               >
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  {`0${index + 1}`}
-                </span>
-                <h3 className="text-[15.5px] font-medium leading-[1.55] text-ink transition group-hover:text-accent">
-                  {post.title}
-                </h3>
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+                <div className="flex items-start gap-3 md:contents">
+                  <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted md:mt-0">
+                    {`0${index + 1}`}
+                  </span>
+                  <h3 className="min-w-0 flex-1 text-[14px] font-medium leading-[1.5] text-ink transition group-hover:text-accent md:text-[15.5px] md:leading-[1.55]">
+                    {post.title}
+                  </h3>
+                  <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-ink-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent md:order-last md:mt-0" />
+                </div>
+                <span className="pl-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:pl-0">
                   {post.date}
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-ink-soft transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
               </a>
             </li>
           ))}

@@ -7,7 +7,7 @@ type Props = {
 
 export function Footer({ footer }: Props) {
   return (
-    <footer id="contact" className="scroll-mt-24 pb-14 pt-20">
+    <footer id="contact" className="scroll-mt-24 pb-12 pt-16 md:pb-14 md:pt-20">
       <div className="grid gap-10 border-t border-hairline pt-14 md:grid-cols-[minmax(0,200px)_1fr]">
         <div className="section-label text-muted">{footer.label}</div>
 
