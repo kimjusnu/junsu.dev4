@@ -30,26 +30,29 @@ export function About({ about }: Props) {
     <section className="pb-16 md:pb-20">
       <SectionHeader id="about" label={about.label} />
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
-        <div className="flex max-w-[58ch] flex-col gap-5 text-[15px] leading-[1.9] text-ink-soft">
-          {about.intro.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
+      <div className="mt-8 md:mt-10 md:grid md:grid-cols-[minmax(0,200px)_1fr] md:gap-10">
+        <div className="hidden md:block" aria-hidden />
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14">
+          <div className="flex max-w-[58ch] flex-col gap-5 text-[15px] leading-[1.9] text-ink-soft">
+            {about.intro.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
 
-        <dl className="grid divide-y divide-hairline border-y border-hairline lg:gap-3 lg:divide-y-0 lg:border-y-0">
-          {about.facts.map((fact) => (
-            <div
-              key={fact.label}
-              className="grid grid-cols-[100px_1fr] items-baseline gap-4 py-2.5 text-[13px] lg:grid-cols-[110px_1fr] lg:py-0 lg:text-[13.5px]"
-            >
-              <dt className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
-                {fact.label}
-              </dt>
-              <dd className="text-ink">{fact.value}</dd>
-            </div>
-          ))}
-        </dl>
+          <dl className="grid divide-y divide-hairline border-y border-hairline lg:gap-3 lg:divide-y-0 lg:border-y-0">
+            {about.facts.map((fact) => (
+              <div
+                key={fact.label}
+                className="grid grid-cols-[100px_1fr] items-baseline gap-4 py-2.5 text-[13px] lg:grid-cols-[110px_1fr] lg:py-0 lg:text-[13.5px]"
+              >
+                <dt className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted">
+                  {fact.label}
+                </dt>
+                <dd className="text-ink">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
 
       <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-[minmax(0,200px)_1fr] md:gap-10">
