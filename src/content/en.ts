@@ -136,7 +136,7 @@ export const en: LocaleContent = {
         logo: "/AimBeLab_logo.png",
         period: "2025.07 — Present",
         department: "SW Development Team",
-        employment: "Full-time",
+        employment: "",
         role: "Assistant Manager",
         description: "Frontend · backend and AI feature development for web services",
         highlights: [

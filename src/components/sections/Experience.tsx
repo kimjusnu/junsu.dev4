@@ -38,8 +38,7 @@ export function Experience({ experience }: Props) {
                 />
               </div>
               <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                {item.employment}
-                {item.role ? ` · ${item.role}` : ""}
+                {[item.employment, item.role].filter(Boolean).join(" · ")}
               </div>
             </div>
 

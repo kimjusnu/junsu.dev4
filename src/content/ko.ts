@@ -136,7 +136,7 @@ export const ko: LocaleContent = {
         logo: "/AimBeLab_logo.png",
         period: "2025.07 — 재직중",
         department: "SW 개발팀",
-        employment: "정규직",
+        employment: "",
         role: "대리",
         description: "웹 서비스 프론트엔드 · 백엔드 및 AI 기능 개발",
         highlights: [
